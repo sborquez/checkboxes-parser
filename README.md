@@ -76,4 +76,4 @@ Esto nos entrega un modelo el cual puede ser evaluado y comparado con otros mode
 
 Para la clasificación se utiliza un modelo de red neuronal convolucional basado en la arquitectura ([LeNet](http://yann.lecun.com/exdb/lenet/))  implementado en [Keras](https://keras.io/)
 
-<img src="https://gitlab.com/sborquez/checkboxes/raw/master/checkbox/LeNet.png" alt="LeNet" height="520">
+<img src="https://gitlab.com/sborquez/checkboxes/raw/master/checkbox/LeNet.png" alt="LeNet" width="500" class="center">
