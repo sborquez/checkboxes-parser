@@ -71,3 +71,9 @@ Como usar estos scripts para generar un modelo.
 4. Utilizar __generate_model.py__.
 
 Esto nos entrega un modelo el cual puede ser evaluado y comparado con otros modelos generados. Luego de seleccionar al mejor, este se puede utilizar con el script __consume_model.py__.
+
+## Arquitectura de CNN
+
+Para la clasificación se utiliza un modelo de red neuronal convolucional basado en la arquitectura ([LeNet](http://yann.lecun.com/exdb/lenet/))  implementado en [Keras](https://keras.io/)
+
+<img src="https://gitlab.com/sborquez/checkboxes/raw/master/checkbox/LeNet.png" alt="LeNet" height="520">
