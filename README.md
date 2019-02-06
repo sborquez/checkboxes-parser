@@ -76,4 +76,18 @@ Esto nos entrega un modelo el cual puede ser evaluado y comparado con otros mode
 
 Para la clasificación se utiliza un modelo de red neuronal convolucional basado en la arquitectura ([LeNet](http://yann.lecun.com/exdb/lenet/))  implementado en [Keras](https://keras.io/)
 
-<img src="https://gitlab.com/sborquez/checkboxes/raw/master/checkbox/LeNet.png" alt="LeNet" width="500" class="center">
+<img src="https://gitlab.com/sborquez/checkboxes/raw/master/checkbox/LeNet.png" alt="LeNet" width="300" class="center">
+
+## Instalacion
+
+```
+# Instalar tesseract
+apt-get update && apt-get install -y \
+    tesseract-ocr \
+    libtesseract-dev \
+    tesseract-ocr-spa
+
+# Instalar requeriments.txt
+pip install --upgrade pip
+pip install --trusted-host pypi.python.org -r requirements.txt
+```
