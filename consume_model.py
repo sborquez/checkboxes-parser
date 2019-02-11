@@ -136,7 +136,10 @@ if not full:
     filtered_results = {}
     for item, checks in results.items():
         if checks["POS"] == checks["NEG"]:
-            filtered_results[item] = "invalido"
+            if checks["POS"] == "check":
+                filtered_results[item] = "NULL"
+            else: 
+                filtered_results[item] = "BLANK"
         elif checks["POS"] == "check":
             filtered_results[item] = "POS"
         else:
