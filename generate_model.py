@@ -54,8 +54,8 @@ checkpoints = path.join(checkpoints_folder, model_name+".{epoch:02d}-{val_loss:.
 model, metadata = build_model(width, height,["check", "not-check"], True, model_path)
 
 # Entrenamiento
-hist, _ = train_model(model, metadata, train_data_folder, output_model, epochs=100, 
-                    init_lr=1e-4, batch_size=64, test_size=0.10, checkpoints=checkpoints, early=early)
+hist, _ = train_model(model, metadata, train_data_folder, output_model, epochs=300, 
+                    init_lr=1e-4, batch_size=32, test_size=0.05, checkpoints=checkpoints, early=early)
 
 # Guardar resultados
 plot_train(hist, output_model + ".png")

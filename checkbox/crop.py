@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 from .shapes import *
 
-PAD = 10
+PAD = 5
 
 
 def get_checkboxes_from_template(checkboxes_path):

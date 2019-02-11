@@ -17,7 +17,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-t", "--template", required=True, help="Path to the template folder", type=str)
 ap.add_argument("-i", "--images", required=True, help="Path to images folder", type=str)
 ap.add_argument("-o", "--output", required=True, help="Path to output folder", type=str)
-ap.add_argument("-h", "--height", required=False, help="Input images height", type=int, default=40)
+ap.add_argument("-g", "--height", required=False, help="Input images height", type=int, default=40)
 ap.add_argument("-w", "--width", required=False, help="Input images width", type=int, default=40)
 args = vars(ap.parse_args())
 

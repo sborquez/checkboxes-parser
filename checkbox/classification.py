@@ -316,7 +316,12 @@ def train_model(model, meta_data, train_data_folder, output_model, epochs=100, i
     print(f"[Info] Imagenes cargadas, train: {len(trainX)}\ttest: {len(testX)}")
 
     # Generador de imagenes, data augmentation
-    image_generator = ImageDataGenerator(rotation_range=10, horizontal_flip=True,vertical_flip=True, fill_mode="nearest")
+    image_generator = ImageDataGenerator(rotation_range=10,
+                                         width_shift_range=0.25,
+                                         height_shift_range=0.25,
+                                         horizontal_flip=True, 
+                                         vertical_flip=True, 
+                                         fill_mode="nearest")
 
     # Inicializar el modelo
     print("[Info] Compilando modelo")
@@ -328,12 +333,16 @@ def train_model(model, meta_data, train_data_folder, output_model, epochs=100, i
     # Callbacks
     callbacks = []
     if early:
-        callbacks.append(EarlyStopping(patience=10))
+        callbacks.append(EarlyStopping(patience=15))
 
     if checkpoints != "":
         callbacks.append(ModelCheckpoint(checkpoints, period=5))
 
     # Entrenar el modelo
+    batch_size_r = len(trainX) / batch_size
+    if batch_size_r < 1:
+        batch_size = int((batch_size_r * batch_size ) // 3)
+
     print("[INFO] Entrenando modelo...")
     H = model.fit_generator(image_generator.flow(trainX, trainY, batch_size=batch_size),
 	                        validation_data=(testX, testY), 
